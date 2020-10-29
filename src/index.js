@@ -72,13 +72,11 @@ nextBtn.addEventListener('click', () => {
 })
 
 const startGame = () => {
-  console.log('Jamesss');
   startBtn.classList.add('hide');
   shuffledQuestions = questions.sort(() => Math.random() - .5);
   currentQuestionIndex = 0;
   questionCon.classList.remove('hide');
   nextQuestion();
-  console.log(shuffledQuestions);
 };
 
 const nextQuestion = () => {
