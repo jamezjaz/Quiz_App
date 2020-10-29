@@ -1,67 +1,70 @@
+/* eslint-disable  no-use-before-define, prefer-destructuring */
+
 const questions = [
   {
     question: 'What is 2 + 2?',
     answers: [
-      { text: '4', correct: true},
-      { text: '22', correct: false}
-    ]
+      { text: '4', correct: true },
+      { text: '22', correct: false },
+    ],
   },
   {
     question: 'What is 10 / 2?',
     answers: [
-      { text: '5', correct: true},
-      { text: '102', correct: false}
-    ]
+      { text: '5', correct: true },
+      { text: '102', correct: false },
+    ],
   },
   {
     question: 'What is UI?',
     answers: [
-      { text: 'User Interface', correct: true},
-      { text: 'User Intelligence', correct: false}
-    ]
+      { text: 'User Interface', correct: true },
+      { text: 'User Intelligence', correct: false },
+    ],
   },
   {
     question: 'What is API key?',
     answers: [
-      { text: 'Application Programing Interface', correct: true},
-      { text: 'Application Programing Instrument', correct: false}
-    ]
+      { text: 'Application Programing Interface', correct: true },
+      { text: 'Application Programing Instrument', correct: false },
+    ],
   },
   {
     question: 'What the full meaning of MERN?',
     answers: [
-      { text: 'MongoDB, Express, React, and Node.js', correct: true},
-      { text: 'Management, Express, React, and npm', correct: false}
-    ]
+      { text: 'MongoDB, Express, React, and Node.js', correct: true },
+      { text: 'Management, Express, React, and npm', correct: false },
+    ],
   },
   {
     question: 'What is a pseudo-class?',
     answers: [
-      { text: 'CSS technique that sets the style when an element changes its state', correct: true},
-      { text: 'HTML Element', correct: false}
-    ]
+      { text: 'CSS technique that sets the style when an element changes its state', correct: true },
+      { text: 'HTML Element', correct: false },
+    ],
   },
   {
     question: 'What are the new form elements introduced in HTML5?',
     answers: [
-      { text: '<datalist>, <keygen>, <output>', correct: true},
-      { text: '<nav>, <header>, <div>', correct: false}
-    ]
+      { text: '<datalist>, <keygen>, <output>', correct: true },
+      { text: '<nav>, <header>, <div>', correct: false },
+    ],
   },
   {
     question: 'How can you reduce page loading time?',
     answers: [
-      { text: 'Reduce the image size, placing CSS at the top', correct: true},
-      { text: 'Placing script at the bottom, minimize redirects and caching', correct: false}
-    ]
-  }
-]
+      { text: 'Reduce the image size, placing CSS at the top', correct: true },
+      { text: 'Placing script at the bottom, minimize redirects and caching', correct: false },
+    ],
+  },
+];
 const startBtn = document.querySelector('#start-btn');
 const nextBtn = document.querySelector('#next-btn');
 const questionCon = document.querySelector('#question-con');
 const questionElement = document.querySelector('#question');
 const answerBtnsElement = document.querySelector('#answer-btns');
-let shuffledQuestions, currentQuestionIndex;
+let shuffledQuestions;
+let currentQuestionIndex;
 
 startBtn.addEventListener('click', () => {
   startGame();
@@ -69,11 +72,11 @@ startBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
   currentQuestionIndex += 1;
   nextQuestion();
-})
+});
 
 const startGame = () => {
   startBtn.classList.add('hide');
-  shuffledQuestions = questions.sort(() => Math.random() - .5);
+  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
   questionCon.classList.remove('hide');
   nextQuestion();
@@ -93,7 +96,7 @@ const showQuestion = (question) => {
     if (ans.correct) {
       button.dataset.correct = ans.correct;
     }
-    button.addEventListener('click', selectAnswer)
+    button.addEventListener('click', selectAnswer);
     answerBtnsElement.appendChild(button);
   });
 };
@@ -103,12 +106,12 @@ const resetState = () => {
   while (answerBtnsElement.firstChild) {
     answerBtnsElement.removeChild(answerBtnsElement.firstChild);
   }
-}
+};
 
 const selectAnswer = (event) => {
   const selectedBtn = event.target;
   const correct = selectedBtn.dataset.correct;
-  setStatusClass(document.body, correct)
+  setStatusClass(document.body, correct);
   Array.from(answerBtnsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct);
   });
@@ -132,4 +135,4 @@ const setStatusClass = (elem, correct) => {
 const clearStatusClass = (elem) => {
   elem.classList.remove('correct');
   elem.classList.remove('wrong');
-}
+};
