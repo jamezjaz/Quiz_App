@@ -31,6 +31,10 @@ let shuffledQuestions, currentQuestionIndex;
 startBtn.addEventListener('click', () => {
   startGame();
 });
+nextBtn.addEventListener('click', () => {
+  currentQuestionIndex += 1;
+  nextQuestion();
+})
 
 const startGame = () => {
   console.log('Jamesss');
@@ -77,10 +81,16 @@ const selectAnswer = (event) => {
   });
 };
 
-const setStatusClass = (elem) => {
+const setStatusClass = (elem, correct) => {
+  clearStatusClass(elem);
   if (correct) {
     elem.classList.add('correct');
   } else {
     elem.classList.add('wrong');
   }
 };
+
+const clearStatusClass = (elem) => {
+  elem.classList.remove('correct');
+  elem.classList.remove('wrong');
+}
