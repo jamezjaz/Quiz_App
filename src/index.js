@@ -19,6 +19,41 @@ const questions = [
       { text: 'User Interface', correct: true},
       { text: 'User Intelligence', correct: false}
     ]
+  },
+  {
+    question: 'What is API key?',
+    answers: [
+      { text: 'Application Programing Interface', correct: true},
+      { text: 'Application Programing Instrument', correct: false}
+    ]
+  },
+  {
+    question: 'What the full meaning of MERN?',
+    answers: [
+      { text: 'MongoDB, Express, React, and Node.js', correct: true},
+      { text: 'Management, Express, React, and npm', correct: false}
+    ]
+  },
+  {
+    question: 'What is a pseudo-class?',
+    answers: [
+      { text: 'CSS technique that sets the style when an element changes its state', correct: true},
+      { text: 'HTML Element', correct: false}
+    ]
+  },
+  {
+    question: 'What are the new form elements introduced in HTML5?',
+    answers: [
+      { text: '<datalist>, <keygen>, <output>', correct: true},
+      { text: '<nav>, <header>, <div>', correct: false}
+    ]
+  },
+  {
+    question: 'How can you reduce page loading time?',
+    answers: [
+      { text: 'Reduce the image size, placing CSS at the top', correct: true},
+      { text: 'Placing script at the bottom, minimize redirects and caching', correct: false}
+    ]
   }
 ]
 const startBtn = document.querySelector('#start-btn');
