@@ -11,16 +11,18 @@
 }
 
 body {
-  --hue: var(--hue-neutral);
-  background-color: hsl((var(--hue),), 100%, 20%);
+  width: 100vw;
+  height: 50vh;
+  max-height: 100vh;
+  background-color: rgb(4, 4, 71);
 }
 
 body.correct {
-  --hue: var(--hue-correct);
+  background-color: green;
 }
 
 body.wrong{
-  --hue: var(--hue-wrong);
+  background-color: rgb(114, 5, 5);
 }
 
 .btn {
