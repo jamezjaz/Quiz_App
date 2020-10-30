@@ -54,7 +54,7 @@ const questions = [
     question: 'How can you reduce page loading time?',
     answers: [
       { text: 'Reduce the image size, placing CSS at the top', correct: true },
-      { text: 'Placing script at the bottom, minimize redirects and caching', correct: false },
+      { text: 'Placing script at the top, maximzse redirects and caching', correct: false },
     ],
   },
 ];
